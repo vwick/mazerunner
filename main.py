@@ -32,12 +32,12 @@ axle_track = 114
 robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
 
 
-#the following loop makes the robot drive foreward until it detects an obstacle. Then it backs up and turns around. It keeps on doing this until you stop the program.
+#the following loop makes the robot drive forward until it detects an obstacle. Then it backs up and turns around. It keeps on doing this until you stop the program.
 while True: 
     #don't move
     robot.stop()
     while color_sensor.color() == Color.BLACK: 
-        #begin driving foreward at 200 millimeters per second
+        #begin driving forward at 200 millimeters per second
         robot.drive(200, 0)
         #wait until an obstacle is detected. This is done by repeatedly doing nothing (waiting for 10 milliseconds) while the measured distance is still greater than 20 mm
         while obstacle_sensor.distance() < 20:
